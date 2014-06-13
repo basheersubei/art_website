@@ -56,7 +56,7 @@ class ArtworksController < ApplicationController
   def destroy
     @artwork.destroy
     @artwork.avatar = nil
-    @artwork.save
+    # @artwork.save
     respond_to do |format|
       format.html { redirect_to artworks_url }
       format.json { head :no_content }

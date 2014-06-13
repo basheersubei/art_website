@@ -1,15 +1,5 @@
 <h1>New artwork</h1>
 
-<!-- <%= render 'form' %> -->
-
-<%= form_for @artwork, :url => artworks_path, :html => { :multipart => true } do |form| %>
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
-
-  <%= form.file_field :avatar %>
-  <%= form.submit %>
-<% end %>
+<%= render 'form' %>
 
 <%= link_to 'Back', artworks_path %>

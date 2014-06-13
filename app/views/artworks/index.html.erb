@@ -16,6 +16,7 @@
       <tr>
         <td><%= artwork.title %></td>
         <td><%= artwork.artist_id %></td>
+        <td><%= image_tag artwork.avatar.url(:thumb) %></td>
         <td><%= link_to 'Show', artwork %></td>
         <td><%= link_to 'Edit', edit_artwork_path(artwork) %></td>
         <td><%= link_to 'Destroy', artwork, method: :delete, data: { confirm: 'Are you sure?' } %></td>

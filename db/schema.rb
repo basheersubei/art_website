@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140612203243) do
+ActiveRecord::Schema.define(version: 20140613172714) do
 
   create_table "artworks", force: true do |t|
     t.string   "title"
@@ -22,22 +22,6 @@ ActiveRecord::Schema.define(version: 20140612203243) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.string   "avatar_file_name_file_name"
-    t.string   "avatar_file_name_content_type"
-    t.integer  "avatar_file_name_file_size"
-    t.datetime "avatar_file_name_updated_at"
-    t.string   "avatar_content_type_file_name"
-    t.string   "avatar_content_type_content_type"
-    t.integer  "avatar_content_type_file_size"
-    t.datetime "avatar_content_type_updated_at"
-    t.string   "avatar_file_size_file_name"
-    t.string   "avatar_file_size_content_type"
-    t.integer  "avatar_file_size_file_size"
-    t.datetime "avatar_file_size_updated_at"
-    t.string   "avatar_update_at_file_name"
-    t.string   "avatar_update_at_content_type"
-    t.integer  "avatar_update_at_file_size"
-    t.datetime "avatar_update_at_updated_at"
   end
 
 end

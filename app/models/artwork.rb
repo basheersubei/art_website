@@ -7,4 +7,15 @@ class Artwork < ActiveRecord::Base
 
   validates :title, presence: true, length: { minimum: 2 }
   validates :avatar, presence: true
+
+  validate :artist_id_exists
+
+  protected
+    # validates that no artwork is created with an invalid associated artist_id
+    def artist_id_exists
+        if !Artist.where(id: self.artist_id).exists? then
+            errors.add(:artist_id, 'A valid artist ID is required!')
+        end
+    end
+
 end

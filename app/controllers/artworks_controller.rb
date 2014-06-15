@@ -10,6 +10,9 @@ class ArtworksController < ApplicationController
   # GET /artworks/1
   # GET /artworks/1.json
   def show
+    @artwork = Artwork.find(params[:id])
+    @artist = Artist.find(@artwork.artist_id)
+
   end
 
   # GET /artworks/new
@@ -24,7 +27,13 @@ class ArtworksController < ApplicationController
   # POST /artworks
   # POST /artworks.json
   def create
-    @artwork = Artwork.new(artwork_params)
+    
+    @artist = Artist.find(params[:artwork][:artist_id])
+    @artwork = @artist.artworks.create(artwork_params)
+    
+    # the above two lines are effectively the same as this line, except now we
+    # have access to the artist as well as the artwork
+    # @artwork = Artwork.new(artwork_params)
 
     respond_to do |format|
       if @artwork.save

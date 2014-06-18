@@ -15,7 +15,7 @@
     <% @artworks.each do |artwork| %>
       <tr>
         <td><%= artwork.title %></td>
-        <td><%= artwork.artist.name %></td>
+        <td><%= link_to artwork.artist.name, artist_path(artwork.artist) %></td>
         <td><%= image_tag artwork.avatar.url(:thumb) %></td>
         <td><%= link_to 'Show', artwork %></td>
         <td><%= link_to 'Edit', edit_artwork_path(artwork) %></td>
